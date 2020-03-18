@@ -1,0 +1,241 @@
+
+
+.container {
+	display: grid;
+	grid-template-columns: .2vw .2fr 1fr 1fr 1fr .2fr .2vw;
+	grid-template-rows: .6fr 1fr .4fr .4fr;
+	grid-column-gap: 10px;
+	width: 100vw;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background: url(../img/woodsphoto2.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	-webkit-transition: background .2s linear;
+	-moz-transition: background .2s linear;
+	-o-transition: background .2s linear;
+	-ms-transition: background .2s linear;
+	transition: background .2s linear;
+  }
+
+
+.navbar {
+	grid-column: 1/7;
+	grid-row: 3;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	color: whitesmoke;
+	font-size: 20px;
+	font-family: 'Amiri', serif;
+}
+
+.nav_r {
+	display: flex;
+	grid-column: 4;
+	grid-row: 1;
+	margin-block-start: 70px;
+
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.nav_l {
+	display: flex;
+	grid-column: 2;
+	grid-row: 1;
+	margin-block-start: 70px;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.nav_c {
+	display: flex;
+	grid-column: 3;
+	grid-row: 1;
+	margin-block-start: 70px;
+
+	justify-content: center;
+	align-items: flex-start;
+	text-align: right;
+}
+
+
+html {
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+}
+
+.project {
+	display: flex;
+	grid-row-start: 2;
+	grid-row-end: 2;
+}
+
+.item-a {
+	display: flex;
+	margin-block-start: 30px;
+	/* align-items: center; */
+	justify-content: flex-end;
+	overflow-wrap: break-word;
+	grid-column-start: 3;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 2;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 7vw;
+	color: white;
+	opacity: 90%;
+	line-height: 80%;
+	min-width: 4vw;
+}
+
+.item-b {
+	display: block;
+	align-items: center;
+	text-align: center;
+	grid-column-start: 4;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 2;
+	min-width: 180px;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 80%;
+
+	-webkit-transition: opacity .1s linear;
+	-moz-transition: opacity .1s linear;
+	-o-transition: opacity .1s linear;
+	-ms-transition: opacity .1s linear;
+	transition: opacity .1s linear;
+}
+
+.item-c {
+	margin-block-start: 10px;
+	display: flex;
+	/* align-items: center; */
+	/* justify-content: center;  */
+	padding-inline-end: 10%;
+	grid-column-start: 5;
+	grid-column-end: 5;
+	grid-row-start: 2;
+	grid-row-end: 2;
+	font-family: 'Amiri', serif;
+	font-size: 14px;
+	color: white;
+	max-width: 500px;
+	max-height: 28vh;
+	overflow-y: scroll;
+	line-height: 14px;
+
+	opacity: 100%;
+
+	-webkit-transition: opacity .1s linear;
+	-moz-transition: opacity .1s linear;
+	-o-transition: opacity .1s linear;
+	-ms-transition: opacity .1s linear;
+	transition: opacity .1s linear;
+}
+
+.project-img {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	filter: grayscale(20%);
+	border-radius: 20px;
+}
+
+.head-image {
+	width: 70%;
+	height: auto;
+	max-width: 20em;
+	filter: brightness(10000%);
+}
+
+
+
+.homelogo {
+	display: flex;
+	grid-column-start: 4;
+	grid-column-end: 4;
+	grid-row-start: 4;
+	grid-row-end: 4;
+	align-items: center;
+	justify-content: center; 
+}
+
+p {
+	margin-block-start: 0em !important;
+}
+
+a {
+	color: white;
+	font-style: bold;
+}
+
+.navbar a {
+	text-decoration: none;
+	text-align: center;
+}
+.navbar a:hover {
+	color: wheat;
+}
+
+.fade-in {
+	animation: fadeIn ease 2s;
+	-webkit-animation: fadeIn ease 2s;
+	-moz-animation: fadeIn ease 2s;
+	-o-animation: fadeIn ease 2s;
+	-ms-animation: fadeIn ease 2s;
+  }
+  
+  
+  @keyframes fadeIn{
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-moz-keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-webkit-keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-o-keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-ms-keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+  }

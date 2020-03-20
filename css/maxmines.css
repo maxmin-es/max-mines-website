@@ -1,5 +1,14 @@
+/* Styling for Max Mines website */
 
+html {
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+	background-color: black;
+}
 
+/* Grid container that holds everything on the page  */
 .container {
 	display: grid;
 	grid-template-columns: .2vw .2fr 1fr 1fr 1fr .2fr .2vw;
@@ -8,11 +17,12 @@
 	width: 100vw;
 	height: 100vh;
 	background-repeat: no-repeat;
-	background: url(../img/woodsphoto2.jpg) no-repeat center center fixed; 
+	background: url(../img/aw_bg2.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	opacity: 100%;
 
 	-webkit-transition: background .2s linear;
 	-moz-transition: background .2s linear;
@@ -21,7 +31,7 @@
 	transition: background .2s linear;
   }
 
-
+/* Bottom nav bar with resume projects and music */
 .navbar {
 	grid-column: 1/7;
 	grid-row: 3;
@@ -33,6 +43,7 @@
 	font-family: 'Amiri', serif;
 }
 
+/* individual bottom nav bar divs for navigating to other pages */
 .nav_r {
 	display: flex;
 	grid-column: 4;
@@ -43,6 +54,7 @@
 	align-items: flex-start;
 }
 
+/* individual bottom nav bar divs for navigating to other pages */
 .nav_l {
 	display: flex;
 	grid-column: 2;
@@ -52,6 +64,7 @@
 	align-items: flex-start;
 }
 
+/* individual bottom nav bar divs for navigating to other pages */
 .nav_c {
 	display: flex;
 	grid-column: 3;
@@ -63,30 +76,21 @@
 	text-align: right;
 }
 
-
-html {
-	overflow: hidden;
-	width: 100vw;
-	height: 100vh;
-	min-height: 100vh;
-}
-
-.project {
-	display: flex;
-	grid-row-start: 2;
-	grid-row-end: 2;
-}
-
+/* first item on the 3 grid pages such as Max Mines on home page */
 .item-a {
 	display: flex;
 	margin-block-start: 30px;
-	/* align-items: center; */
 	justify-content: flex-end;
 	overflow-wrap: break-word;
 	grid-column-start: 3;
 	grid-column-end: 3;
 	grid-row-start: 2;
 	grid-row-end: 2;
+
+}
+
+/* styling for max mines on home page */
+.maxmines {
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 7vw;
 	color: white;
@@ -95,59 +99,30 @@ html {
 	min-width: 4vw;
 }
 
+/* second item on the 3 grid pages such as Max Mines on home page */
 .item-b {
 	display: block;
-	align-items: center;
-	text-align: center;
 	grid-column-start: 4;
 	grid-column-end: 4;
 	grid-row-start: 2;
 	grid-row-end: 2;
+
+
+	-webkit-transition: opacity .1s linear;
+	-moz-transition: opacity .1s linear;
+	-o-transition: opacity .1s linear;
+	-ms-transition: opacity .1s linear;
+	transition: opacity .1s linear;
+}
+
+/* styling for cartoon portrait on home page */
+.logodiv {
 	min-width: 180px;
 	margin-left: auto;
 	margin-right: auto;
 	opacity: 80%;
-
-	-webkit-transition: opacity .1s linear;
-	-moz-transition: opacity .1s linear;
-	-o-transition: opacity .1s linear;
-	-ms-transition: opacity .1s linear;
-	transition: opacity .1s linear;
-}
-
-.item-c {
-	margin-block-start: 10px;
-	display: flex;
-	/* align-items: center; */
-	/* justify-content: center;  */
-	padding-inline-end: 10%;
-	grid-column-start: 5;
-	grid-column-end: 5;
-	grid-row-start: 2;
-	grid-row-end: 2;
-	font-family: 'Amiri', serif;
-	font-size: 14px;
-	color: white;
-	max-width: 500px;
-	max-height: 28vh;
-	overflow-y: scroll;
-	line-height: 14px;
-
-	opacity: 100%;
-
-	-webkit-transition: opacity .1s linear;
-	-moz-transition: opacity .1s linear;
-	-o-transition: opacity .1s linear;
-	-ms-transition: opacity .1s linear;
-	transition: opacity .1s linear;
-}
-
-.project-img {
-	height: 100%;
-	width: 100%;
-	object-fit: contain;
-	filter: grayscale(20%);
-	border-radius: 20px;
+	align-items: center;
+	text-align: center;
 }
 
 .head-image {
@@ -157,16 +132,34 @@ html {
 	filter: brightness(10000%);
 }
 
-
-
-.homelogo {
+/* third item on the 3 grid pages such as Max Mines on home page */
+.item-c {
 	display: flex;
-	grid-column-start: 4;
-	grid-column-end: 4;
-	grid-row-start: 4;
-	grid-row-end: 4;
-	align-items: center;
-	justify-content: center; 
+
+	grid-column-start: 5;
+	grid-column-end: 5;
+	grid-row-start: 2;
+	grid-row-end: 2;
+
+
+	opacity: 100%;
+	-webkit-transition: opacity .1s linear;
+	-moz-transition: opacity .1s linear;
+	-o-transition: opacity .1s linear;
+	-ms-transition: opacity .1s linear;
+	transition: opacity .1s linear;
+}
+
+/* styling for regular writing and paragraph text */
+.classic-text {
+	line-height: 14px;
+	font-family: 'Amiri', serif;
+	font-size: 14px;
+	color: white;
+	padding-inline-end: 10%;
+	max-width: 500px;
+	max-height: 28vh;
+	margin-block-start: 30px;
 }
 
 p {
@@ -184,6 +177,59 @@ a {
 }
 .navbar a:hover {
 	color: wheat;
+}
+
+
+/* styling for the max mines at top left */
+.topbar {
+	display: block;
+	justify-content: flex-start;
+	padding-block-start: 60px;
+	overflow-wrap: break-word;
+	grid-column: 3/3;
+	grid-row:1;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1.7vw;
+	color: white;
+	opacity: 60%;
+	line-height: 80%;
+	min-width: 3vw;
+}
+
+.topbar a {
+	text-decoration: none;
+}
+
+/* styling for linkedin and github icons */
+.icons {
+	display: block;
+	padding-block-start: 60px;
+	grid-row:1;
+	font-size: 1.5vw;
+	color: white;
+	opacity: 100%;
+	justify-content: flex-end; 
+	grid-column: 5/5; 
+	text-align: end; 
+	padding-inline-end: 5%;
+}
+
+.icons a {
+	color: white;
+	opacity: 60%;
+}
+
+.icons-home {
+	grid-row:4;
+	grid-column: 4;
+	justify-content: flex-start; 
+	text-align: center; 
+	opacity: 100%;
+
+}
+
+.icons-home a {
+	color: #040505;
 }
 
 .fade-in {

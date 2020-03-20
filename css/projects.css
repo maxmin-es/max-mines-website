@@ -1,0 +1,48 @@
+/* Styling for the page that displays the grid of all my projects */
+
+/* div for each project on the project page */
+.project {
+	display: flex;
+	grid-row-start: 2;
+	grid-row-end: 2;
+
+	-webkit-transition: .2s linear;
+	-moz-transition: .2s linear;
+	-o-transition: .2s linear;
+	-ms-transition: .2s linear;
+	transition: .2s linear;
+}
+
+/* div for each project image on the project page */
+.project-img {
+	height: 70%;
+	width: 70%;
+	object-fit: contain;
+	filter: grayscale(20%);
+	border-radius: 20px;
+	-webkit-filter: drop-shadow(3px 1px 20px black);
+	filter: drop-shadow(3px 1px 20px black);
+}
+
+.project-img:hover {
+	transform: scale(1.04,1.04);
+	-webkit-transition: .1s linear;
+	-moz-transition: .1s linear;
+	-o-transition: .1s linear;
+	-ms-transition: .1s linear;
+	transition: .1s linear;
+}
+
+/* grid for displaying projects */
+.project-display {
+	grid-column: 3/6;
+	grid-row: 2;
+	display: grid;
+	margin-left: 140px;
+	margin-right: 140px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	color: whitesmoke;
+	align-items: center;
+	justify-content: center; 
+}

@@ -225,11 +225,27 @@ a {
 	justify-content: flex-start; 
 	text-align: center; 
 	opacity: 100%;
-
 }
 
 .icons-home a {
 	color: #040505;
+}
+
+.credits-home {
+	grid-row:4;
+	grid-column: 5;
+	justify-content: flex-start; 
+	text-align: right; 
+	opacity: 80%;
+	font-size: .7vw;
+	color: #040505;
+	font-family: 'Amiri', serif;
+	padding-block-start: 75px;
+}
+
+.credits-home a {
+	color: #040505;
+	text-decoration: none;
 }
 
 #preload {

@@ -232,13 +232,20 @@ a {
 	color: #040505;
 }
 
+#preload {
+	background: url(../img/lp2.jpg), url(../img/lp3.jpg), url(../img/maxdark.jpg);
+	opacity: 1%;
+}
+
+
+/* Fade and other animation stuff */
 .fade-in {
 	animation: fadeIn ease 2s;
 	-webkit-animation: fadeIn ease 2s;
 	-moz-animation: fadeIn ease 2s;
 	-o-animation: fadeIn ease 2s;
 	-ms-animation: fadeIn ease 2s;
-  }
+}
   
   
   @keyframes fadeIn{
@@ -285,3 +292,4 @@ a {
 	  opacity:1;
 	}
   }
+

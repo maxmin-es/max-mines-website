@@ -20,17 +20,18 @@
 		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Rokkitt&display=swap" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="js/scripts.js"></script>
+		<script src="js/projectpage-scripts.js"></script>
 		<script src="https://kit.fontawesome.com/1f1ee8a85d.js" crossorigin="anonymous"></script>
 	  
 		<!-- Custom styles for this template -->
 		<link href="css/maxmines.css" rel="stylesheet">
 		<link href="css/projectpage.css" rel="stylesheet">
 	  </head>
+	  <div id="preload"></div>
 
 
-    <div class="project-container" style="background: url(./img/aw_bg.jpg) no-repeat center center fixed; background-size: cover;">
-		<div class="topbar"><a href="./maxmines.html">MAX<br/>MINES</a><br/><br/>
+    <div class="project-container fade-in" style="background: url(./img/aw_bg.jpg) no-repeat center center fixed; background-size: cover;">
+		<div class="topbar"><a href="./index.html">MAX<br/>MINES</a><br/><br/>
 	</div>
 	<div class="icons" style="grid-row: 1; grid-column: 6;" >
 		<a href="max_mines@brown.edu"><i class="fas fa-envelope fa-xs" ></i></a>&nbsp
@@ -38,13 +39,12 @@
 		<a href="https://github.com/maxmin-es"><i class="fab fa-github fa-xs"></i></a>
 	</div>
 		
-		<div class="vnav topbar ">
+		<div class="vnav topbar">
 			<a id="projects" class="nav-text" href="./projects.html">projects</a><br/>
-			<a id="resume" class="nav-text" download="maxmines-resume">résumé</a><br/>
+			<a id="resume" class="nav-text" href-"" download="maxmines-resume">résumé</a><br/>
 			<a id="music" class="nav-text" href="./music.html">music</a>
 		</div>
 		
-		<!-- <div class="project-title">Sana Labs & Speech Coach</div> -->
 
         <div class="project-body">
 			<div class="subtitle">Sana Labs & Speech Coach</div>
@@ -63,7 +63,7 @@
 		Speech Coach first presents a user with a diagnostic phrase to find phonemes the user has most trouble pronouncing. Users are then presented with a number of sentences to read aloud. 
 		These sentences feature the phonemes that need improvement in various contexts to ensure thorough practice. The coach reads the phrase aloud, then prompts the user to repeat the sentence word-by-word. 
 		The coach returns to mispronounced words at the end of the sentence. At the end of the session, a user is presented with a breakdown of their performance and phonemes they should practice pronouncing.
-		<br><br><video class="ani fade-in ani-3" style="border-radius: 3px; width: 100%; height: auto;" autoplay muted loop id="myVideo">
+		<br><br><video class="ani fade-in ani-3" style="border-radius: 3px; width: 90%; height: auto;" autoplay muted loop id="myVideo">
 			<source src="img/sanamovie.mp4" type="video/mp4">
 		</video><br/><br/>
 

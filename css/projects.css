@@ -1,10 +1,17 @@
 /* Styling for the page that displays the grid of all my projects */
 
+.projbg {
+	background: url(./img/aw_bg4.jpg) no-repeat center center fixed; 
+	background-size: cover;
+}
+
 /* div for each project on the project page */
 .project {
 	display: flex;
 	grid-row-start: 2;
 	grid-row-end: 2;
+	position: relative;
+	text-align: center;
 
 	-webkit-transition: .2s linear;
 	-moz-transition: .2s linear;
@@ -15,8 +22,8 @@
 
 /* div for each project image on the project page */
 .project-img {
-	height: 70%;
-	width: 70%;
+	height: 75%;
+	width: 75%;
 	object-fit: contain;
 	filter: grayscale(20%);
 	border-radius: 20px;
@@ -38,11 +45,22 @@
 	grid-column: 3/6;
 	grid-row: 2;
 	display: grid;
-	margin-left: 140px;
-	margin-right: 140px;
+	margin-left: 6vw;
+	margin-right: 6vw;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr;
 	color: whitesmoke;
 	align-items: center;
 	justify-content: center; 
+}
+
+.project-desc {
+	position: absolute;
+	max-width: 70%;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: .8vw;
+	margin-top: 40%;
+	color: rgb(255, 255, 255);
+	opacity: 70%;
+	/* font-weight: bold; */
 }

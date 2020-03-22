@@ -2,10 +2,11 @@
 
 html {
 	background-color: black;
-	overflow: hidden;
+
 }
 body {
 	margin: 0px;
+	overflow: hidden;
 }
 /* Grid container that holds everything on the page  */
 .container {
@@ -380,12 +381,14 @@ a {
 		grid-column: 2/4;
 		grid-row: -1;
 		padding-block-start: 0px;
+		margin-block-start: 0px;
 		padding-inline-end: 0px;
 		font-size: 5.5vw;
 	}
 
 	.icons-home {
 		visibility: visible;
+		grid-row: 4;
 	}
 
 	.credits-home{
@@ -417,12 +420,13 @@ a {
 	}
 
 	.topbar {
-		font-size: 12vw;
+		font-size: 10vw;
 		color: white;
-		opacity: .9;
+		opacity: .8;
 		line-height: 80%;
 		text-align: left;
-		margin-block-start: 20vw;
+		margin-block-start: 6vw;
+		margin-block-end: .18vw;
 		justify-content: center;
 		align-items: center;
 		text-align: center;

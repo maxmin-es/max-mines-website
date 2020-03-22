@@ -1,11 +1,8 @@
 /* Styling for Max Mines website */
 
 html {
-	overflow: hidden;
-	width: 100vw;
-	height: 100vh;
-	min-height: 100vh;
 	background-color: black;
+	overflow: hidden;
 }
 body {
 	margin: 0px;
@@ -17,6 +14,7 @@ body {
 	grid-template-columns: .2vw .2fr 1fr 1fr 1fr .2fr .2vw;
 	grid-template-rows: .6fr 1fr .4fr .4fr;
 	grid-column-gap: 10px;
+	padding-top: 4vh;
 	width: 100vw;
 	height: 100vh;
 	background-repeat: no-repeat;
@@ -25,7 +23,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	opacity: 100%;
+	opacity: 1;
 
 	-webkit-transition: background .2s linear;
 	-moz-transition: background .2s linear;
@@ -97,7 +95,7 @@ body {
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 7vw;
 	color: white;
-	opacity: 90%;
+	opacity: .9;
 	line-height: 80%;
 	min-width: 4vw;
 }
@@ -123,7 +121,7 @@ body {
 	min-width: 180px;
 	margin-left: auto;
 	margin-right: auto;
-	opacity: 80%;
+	opacity: .8;
 	align-items: center;
 	text-align: center;
 }
@@ -145,7 +143,7 @@ body {
 	grid-row-end: 2;
 
 
-	opacity: 100%;
+	opacity: 1;
 	-webkit-transition: opacity .1s linear;
 	-moz-transition: opacity .1s linear;
 	-o-transition: opacity .1s linear;
@@ -187,7 +185,7 @@ a {
 .topbar {
 	display: block;
 	justify-content: flex-start;
-	padding-block-start: 60px;
+	margin-block-start: 60px;
 	overflow-wrap: break-word;
 	grid-column: 3/3;
 	grid-row:1;
@@ -206,11 +204,11 @@ a {
 /* styling for linkedin and github icons */
 .icons {
 	display: block;
-	padding-block-start: 60px;
+	margin-block-start: 60px;
 	grid-row:1;
 	font-size: 1.5vw;
 	color: white;
-	opacity: 100%;
+	opacity: 1;
 	justify-content: flex-end; 
 	grid-column: 5/5; 
 	text-align: end; 
@@ -219,7 +217,7 @@ a {
 
 .icons a {
 	color: white;
-	opacity: 60%;
+	opacity: .6;
 }
 
 .icons-home {
@@ -227,7 +225,7 @@ a {
 	grid-column: 4;
 	justify-content: flex-start; 
 	text-align: center; 
-	opacity: 100%;
+	opacity: 1;
 }
 
 .icons-home a {
@@ -239,7 +237,7 @@ a {
 	grid-column: 5;
 	justify-content: flex-start; 
 	text-align: right; 
-	opacity: 80%;
+	opacity: .8;
 	font-size: .9vw;
 	color: #040505;
 	font-family: 'Amiri', serif;
@@ -249,12 +247,12 @@ a {
 .credits-home a {
 	color: #040505;
 	text-decoration: none;
-	opacity: 80%;
+	opacity: .8;
 }
 
-#preload {
+.preload {
 	background: url(../img/lp2.jpg), url(../img/lp3.jpg), url(../img/maxdark.jpg);
-	opacity: 1%;
+	opacity: .01;
 }
 
 
@@ -397,7 +395,7 @@ a {
 	/* styling for cartoon portrait on home page */
 	.logodiv {
 		justify-content: end;
-		opacity: 100%;
+		opacity: 1;
 		align-items: center;
 		text-align: end;
 	}
@@ -413,7 +411,7 @@ a {
 		font-family: 'Josefin Sans', sans-serif;
 		font-size: 12vw;
 		color: white;
-		opacity: 90%;
+		opacity: .9;
 		line-height: 80%;
 		text-align: left;
 	}
@@ -421,7 +419,7 @@ a {
 	.topbar {
 		font-size: 12vw;
 		color: white;
-		opacity: 90%;
+		opacity: .9;
 		line-height: 80%;
 		text-align: left;
 		margin-block-start: 20vw;
@@ -447,6 +445,7 @@ a {
 	/* styling for regular writing and paragraph text */
 	.classic-text p {
 		width: 100%;
+		margin-block-end: 100px;
 	}
 
 	.music-p {

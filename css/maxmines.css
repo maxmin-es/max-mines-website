@@ -1,7 +1,7 @@
 /* Styling for Max Mines website */
 
 html {
-	background-color: black;
+	background-color: gray;
 
 }
 body {
@@ -314,6 +314,10 @@ a {
 
 /* Small screens */
 @media only screen and (max-width: 1000px) {
+	body {
+		overflow: scroll;
+	}
+
 	.container {
 		display: grid;
 		grid-template-columns: 10vw 1fr 1fr 10vw;

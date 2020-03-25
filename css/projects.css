@@ -132,10 +132,14 @@
 		grid-row: 4; 
 		justify-content: center; 
 		align-items: center;
+
 	}
 
 	.project-desc {
 		visibility: hidden;
 	}
+	/* .project-img {
+		max-width: 270px;
+	} */
 
 }

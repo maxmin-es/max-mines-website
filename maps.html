@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" style="background: #141211;">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="Max Mines">
+	  
+		<title>Max Mines - Maps</title>
+	  
+		<!-- Custom fonts for this template -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans|Poller+One|Raleway|Roboto&display=swap" rel="stylesheet">
+		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+		<link href="css/maxmines.css" type="text/css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Rokkitt&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="js/projectpage-scripts.js"></script>
+		<script src="https://kit.fontawesome.com/1f1ee8a85d.js" crossorigin="anonymous"></script>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+		<link rel="manifest" href="./favicons/site.webmanifest">
+		<link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="./favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="./favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+	  
+		<!-- Custom styles for this template -->
+		<link href="css/maxmines.css" rel="stylesheet">
+		<link href="css/projectpage.css" rel="stylesheet">
+	  </head>
+	  <div id="preload" class="preload"></div>
+
+
+    <div class="project-container fade-in" style="background: url(./img/aw_bg.jpg) no-repeat center center fixed; background-size: cover;">
+		<div class="topbar"><a href="./index.html">MAX<br/>MINES</a><br/><br/>
+	</div>
+	<div class="icons" style="grid-row: 1; grid-column: 6;" >
+		<a href="max_mines@brown.edu"><i class="fas fa-envelope fa-xs" ></i></a>&nbsp
+		<a href="https://www.linkedin.com/in/max-mines-591556144/"><i class="fab fa-linkedin-in fa-xs" ></i></a>&nbsp 
+		<a href="https://github.com/maxmin-es"><i class="fab fa-github fa-xs"></i></a>
+	</div>
+		
+		<div class="vnav topbar">
+			<a id="projects" class="nav-text" href="./projects.html">projects</a><br/>
+			<a id="resume" class="nav-text" href="./maxmines_resume.pdf" download>résumé</a><br/>
+			<a id="music" class="nav-text" href="./music.html">music</a>
+		</div>
+		
+
+        <div class="project-body">
+			<div class="subtitle">Maps</div>
+
+			For the final project for Brown’s Software Engineering course (CS32), I built a fully functional navigation application in Java. 
+			The application allows users to specify a SQLite3 database file to load in custom map data sets. We used the databases available from <a href="openstreetmap.org">OpenStreetMap</a>.
+			Users can  interact with the map in one of two ways; they can either specify a latitude and longitude and are brought to the nearest intersection, or click/specify
+			two points on the map and are shown the shortest path between the points.
+			<br>
+			<br>
+			The project built on previous projects we’d worked on throughout the semester. The nearest intersection feature of the application used a previous K-D Tree
+			implementation. The shortest path algorithm used a previous implmentation of A*. The autocompletion of streetnames when typing in the GUI used a previous implmentation of
+			tries. Below I detail the different components of this project.
+
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/5LfqnZbx_qM?start=10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<div class="subtitle">Preprocessing/Runtime Optimizations</div>
+After starting the program, the user is prompted to enter a .sqlite3 database file. The file is fed to the self-made K-D Tree class which is used to quickly calculate
+nearest distance measurements. We perform tile caching which allows for a smoother zoom/pan experience. Tile caching means that we make larger SQL queries for more map information than we are actually displaying.
+ This allows us to load out-of-frame map information into memory so when the viewport changes, the new parts of the map are quick to load.
+<br>
+<br>
+
+		<div class="subtitle">K-D Tree</div>
+		One of the semesters earlier projects was Stars, a program that used a K-D Tree to execute finding the k-nearest neighbors of a given point in
+		n-dimensional space, or finding all neighbors within a given radius of a point. You can read a full description of the K-D Tree datastructure  
+		<a href="https://en.wikipedia.org/wiki/K-d_tree">here</a>. I built my K-D Tree methods with 
+		<a href = "https://www.geeksforgeeks.org/generics-in-java/">Java Generics</a> which allowed me to reuse the code for the Maps project. I simply fed my
+		K-D Tree class a series of Map Node objects which each have a .getCoordinates() method. 
+		<br>
+		<br>
+		<img src="img/kdtree.png" class="img-fluid" alt="">
+		<br>
+		<br>
+		A K-D Tree is a binary search tree with data of k dimensions. Each depth level of the tree represents a different 
+		one of the k-dimensions of the data. In the case of map nodes, our vertex-splits alternated between longitude and latitude.
+		When constructing the tree, we sort the data points on the axis that we want to split on. We then take the median point from that list,
+		and recur on a left subtree using the data less than the median and a right subtree using the data greater than the median.
+		The figure above provides a good visualization of the algorithm, where the red and the blue represent different dimensions of the data.
+		<br>
+		<br>
+		The K-D Tree nearest neighbor algorithm works as follows:
+		Given a node and a target point to search around...
+		<ul>
+			<li>Determine the straight-line distance from the current node to your target node. If the 
+				current node is closer to the target than your current best, update the value accordingly.
+			</li>
+			<li>Determine the axis distance based on the corresponding depth-based dimension discussed above. For example,
+				if we are on a longitude layer, we would measure the current node longitude to our target point. If
+				the axis distance between this node and our target is less than or equal to the euclidean distance between our current
+				best and our target, we recur on both children. We do this because it's possible that there are points closer to our target
+				on the other side of the half space created by the current node.
+			</li>
+			<li>If we don't recur on both children, then we simply recur based on a comparison between the two relevant axis values 
+				(if the longitude of the target is bigger than the current node, we go right, else left).
+			</li>
+		</ul>
+		<br>
+		<br>
+		<div class="subtitle">A*</div>
+		A* is the graph-traversal algorithm used to find the shortest distance between two points on the map. 
+		As this algorithm is quite common and fairly similar to Dijkstra's, I won't describe A* in detail because you can quickly understand it <a href="https://en.wikipedia.org/wiki/A*_search_algorithm">here</a>. 
+
+		<div class="subtitle">Tries, n-grams, and Autocomplete</div>
+		Upon loading in the .sqlite3 file to the Maps program, a trie is constructed using all the street names in the database 
+		A <a href="https://en.wikipedia.org/wiki/Trie">trie</a> is a search tree datastructure often used for lexical data.
+		Tries are also known as prefix trees because each node represents an additional letter added onto the parent's value (see figure below).
+		<br>
+		<br>
+		<img src="img/trie.png" class="img-fluid" alt="">
+		<br>
+		<br>
+		A few notes on my trie implementation: Each node on the tree has a hashmap with 26 entries pointing to child nodes (if they exist). For example, if the first
+		node in the trie is 'a', the node might have a child value at 't' for the word 'at' but no child entry for 'y' because 
+		there are no words in the corpus starting with 'ay'. Each node also had a boolean value representing whether the node
+		constitues a word. For example, if we were to build the word 'apple', the letter 'a' by itself is a word, but 'ap', 'app', and 'appl' are not words.
+		<br>
+		<br>
+		<a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a> is a metric for determining the distance between
+		two strings. This metric was used to create a sort of "nearest neighbor" search for the trie. Thus, given a certain string, the trie could return
+		all possible values that were within a given LD of the target.
+		<br>
+		<br>
+		When a user types a street name, the program dynamically searches the trie and returns a list of words/street names within a given
+		Levenshtein distance of the target. The autocomplete implementation also has options for loading in a corpus of text 
+		to create bigram frequencies (how often two words cooccur), but this is less useful for streetnames, so by default this feature 
+		is turned off in the Maps application.
+
+		<div class="subtitle">Server and Client</div>
+		Our backend was written entirely in Java and uses Spark to communicate with our JavaScript front end. Our front end makes requests from the backend for
+		map data, fastest-route information, and autocorrect suggestsions. Our Java server 
+		sends the front end packages of strees (edges) to draw. A simple division calculatation based on our current viewport allows us
+		to paint the map on the screen. All painting is done with the HTML canvas library.
+    </div>
+
+
+</html>

@@ -324,6 +324,7 @@ a {
 		grid-template-rows: 1fr .7fr 1fr 1fr;
 		overflow: auto;
 		row-gap: 2px;
+		padding-bottom: 40px;
 
 	  }
 	

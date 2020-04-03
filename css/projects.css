@@ -138,8 +138,8 @@
 	.project-desc {
 		visibility: hidden;
 	}
-	/* .project-img {
-		max-width: 270px;
-	} */
+	.project-img {
+		max-height: 130px;
+	}
 
 }
